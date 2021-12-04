@@ -1,6 +1,9 @@
-def read_input(filename="input"):
+def read_input(filename="input", strip_newline=False):
     f = open(filename, "r")
-    return f.readlines()
+    lines = f.readlines()
+    if strip_newline:
+        lines = [line.strip() for line in lines]
+    return lines
 
 
 def read_input_as_numbers(filename="input"):
